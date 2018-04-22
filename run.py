@@ -12,7 +12,7 @@ email += "@somaiya.edu"
 print("Email : "+email)
 password = getpass.getpass('Password : ')
 
-awards = ["Mr. India award (Low attendance)","Lifetime achievement award ( Student of the year)",
+awards = ["Mr. India award (Low attendance)","Lifetime achievement award (Student of the year)",
     "Ranchoddas Shamaldas award (Nerd)","Salman Bhai Award (Gets out of trouble easily)",
     "Munnabhai & circuit award (Best Friends)","Jimmy Shergill (Friendzoned)"]
 
@@ -27,8 +27,10 @@ while award < 1 or award > 6 :
 award-=1
 
 person = input("Enter the name of the person you want to give (Ex. Ayush Varma): ")
-
-print("Awarding "+ person + " with "+ awards[award])
+times = int(input("Enter the number of times you want to submit the form (Ex. 10) : "))
+while times < 1 :
+    times = int(input("Enter the number of times you want to submit the form (Ex. 10) : "))
+print("Awarding "+ person + " with " + str(times) + " " + awards[award])
 
 driver = webdriver.Chrome()
 driver.get("https://goo.gl/axxoza")
@@ -48,7 +50,6 @@ try:
     personName.send_keys(person)
     # time.sleep(5)
     driver.find_element_by_xpath("//*[contains(text(), 'Submit')]").click()
-    # time.sleep(5)
 
 finally:
     driver.quit()
