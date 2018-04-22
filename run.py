@@ -4,6 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait # available since 2.4.0
 from selenium.webdriver.support import expected_conditions as EC # available since 2.26.0
 from selenium.webdriver.common.keys import Keys
 
+import time
 import getpass
 
 email = input("Enter your Somaiya ID : ")
@@ -21,3 +22,16 @@ driver.implicitly_wait(10)
 inputElement = driver.find_element_by_name("password")
 inputElement.send_keys(password + Keys.RETURN)
 driver.implicitly_wait(10)
+
+# try:
+WebDriverWait(driver, 100).until(EC.title_contains("Farewell Awards!"));
+driver.find_element_by_xpath("//*[contains(text(), 'Mr. India award')]").click()
+personName = driver.find_element_by_xpath("//input[@type='text']")
+personName.send_keys("Ayush Varma")
+time.sleep(10)
+driver.find_element_by_xpath("//*[contains(text(), 'Submit')]").click()
+
+# finally:
+    #
+    # driver.quit()
+#
