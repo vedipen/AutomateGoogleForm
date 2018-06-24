@@ -2,7 +2,7 @@
 
 Specific for this google [form](https://goo.gl/axxoza).  
 Python script for submitting responses to google form, multiple times. Made for fun.  
-It automatically logs in using Somaiya account (Restricted to Somaiya Users), fills the form with required input and submits it.  
+It automatically logs in using Google account (Restricted to somaiya.edu Users), fills the form with required input and submits it.  
 Automates it for n times.  
 
 ## Requirements -
